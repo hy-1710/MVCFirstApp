@@ -1,0 +1,36 @@
+﻿@model MVCFirstApp.ViewModel.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Movies</h2>
+
+<table style="margin-left:30px">
+    <tr>
+        <td>
+            <h3> List of Novies</h3>
+        </td>
+    </tr>
+    @foreach (var mv in Model.movie)
+    {
+        <tr>
+            <td>
+                <a > @Html.ActionLink(@mv.Name, "Details", "Movie", new { id = mv.ID }, null)</a>
+                @*<p>@mv.ID</p>*@
+
+            </td>
+        </tr>
+       
+    }
+
+</table>
+    
+       
+
+    
+
+
+
+
